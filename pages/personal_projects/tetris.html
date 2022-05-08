@@ -6,8 +6,8 @@
 	<meta name="description" content="">
 	<meta name="author" content="Tan Wei Qiang, Benjamin">
 	
-	<title>RLL</title>
-
+	<title>Tetris</title>
+	
 	<link rel="shortcut icon" href="../../assets/images/gt_favicon.png">
 	
 	<!-- Bootstrap -->
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="../../assets/css/styles.css">
-
+	
 	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
 </head>
 <body>
@@ -26,30 +26,29 @@
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="1">
 		<h1 id="logo" class="text-center">
-			<span class="title">My Internship Experience</span>
+			<span class="title">Tetris</span>
+			<span class="tagline">Puzzle video game</span>
 		</h1>
 	</div>
 
 	<nav class="navbar navbar-default navbar-sticky">
 		<div class="container-fluid">
-	
+			
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown_target"> <span
-						class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown_target"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			</div>
-	
+			
 			<div id="dropdown_target" class="navbar-collapse collapse">
-	
+			
 				<ul class="nav navbar-nav">
 					<li><a href="../../index.html">Home</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Internship<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sll.html">Sustainable Living Lab</a></li>
-							<li class="active"><a href="#">Hydroleap Private Limited</a></li>
-							<li><a href="rll.html">Raffles Learning Lab</a></li>
-							<li><a href="resync.html">Resync Technologies Private Limited</a></li>
+							<li><a href="../internship/sll.html">Sustainable Living Lab</a></li>
+							<li><a href="../internship/hydroleap.html">Hydroleap Private Limited</a></li>
+							<li><a href="../internship/rll.html">Raffles Learning Lab</a></li>
+							<li><a href="../internship/resync.html">Resync Technologies Private Limited</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -59,84 +58,61 @@
 							<li><a href="../school_projects/cs4222.html">CS4222</a></li>
 							<li><a href="../school_projects/ee4218.html">EE4218</a></li>
 							<li><a href="../school_projects/cs3237.html">CS3237</a></li>
-							<li><a href="../school_projects/ee2033.html">EE2033</a></li>
+							<li><a href="../school_projects/ee2033.html">EE2023</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects<b
-								class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="../personal_projects/asl.html">ASL Recognition</a></li>
-							<li><a href="../personal_projects/tetris.html">Tetris</a></li>
+							<li><a href="asl.html">ASL Recognition</a></li>
+							<li class="active"><a href="#">Tetris</a></li>
 							<li><a href="sidebar-right.html">Race Car</a></li>
 							<li><a href="single.html">Website</a></li>
 						</ul>
 					</li>
 				</ul>
-	
 			</div>
 			<!--/.nav-collapse -->
-		</div>
+		</div>	
 	</nav>
 </header>
 
 <main id="main">
 
 	<div class="container">
-
+		
 		<div class="row topspace">
-			
-			<!-- Sidebar -->
-			<aside class="col-sm-4 sidebar sidebar-right">
+			<div class="col-sm-8 col-sm-offset-2">
+															
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta"> 
+ 							<span class="posted-on"><time class="entry-date published" date="2022-5-8">May 8, 2022</time></span>			
+ 						</div> 
+					</header> 
+					<div class="entry-content"> 
+						<h3>Overview</h3>
+						<p>
+							Tetris has a long history that dates back to as far as 1984. 
+							It is essentially fitting of different geometric forms called <i>tetrominoes</i> onto a rectangular playing field.
+							The player gets to control the speed of descend and the angle at which the <i>tetrominoes</i> lands.
+							The longer a player lasts, the higher the score of that player.
+						</p>
+						
+						<h3>Proof of Concept</h3>
+						<p>Attached is a video recording of the actual gameplay.</p>
+						<video style="max-width: 100%" controls="controls" preload="metadata"
+							onclick="this.paused ? this.play() : this.pause();">
+							<source type="video/mp4" src="../../assets/video/tetris_new.mp4">
+						</video>
+					</div> 
+				</article><!-- #post-## -->
 
-				<ul class="nav text-right nav-side">
-					<li><a href="sll.html">Sustainable Living Lab</a></li>
-					<li><a href="hydroleap.html">Hydroleap Private Limited</a></li>
-					<li class="active"><a href="#">Raffles Learning Lab</a></li>
-					<li><a href="resync.html">Resync Technologies Private Limited</a></li>
-				</ul>
+			</div> 
+		</div> <!-- /row post  -->
 
-			</aside>
-			<!-- /Sidebar -->
-
-			<!-- Article main content -->
-			<article class="col-sm-8 maincontent">
-				<p><img src="../../assets/images/rll.jpg" alt="Registered Logo of rll" class="" height="300px"></p>
-				<p>
-					Raffles Learning Lab is an education centre providing tuition and enrichment classes for primary and secondary school
-					levels.
-				</p>
-				<h3><b>Frontend Development Instructor</b></h3>
-				<h5>JAN 2021 - MAY 2021</h5>
-				<ul class="indent">
-					<li>Handled a class size of around 7 primary school students via Online and Face-to-Face platforms.</li>
-					<li>Taught the students basic frontend frameworks such as&#58;</li>
-					<ul class="inner-indent">
-						<li>HyperText Multimedia Language (HTML) and Cascading Style Sheet (CSS).</li>
-						<li>Public hosting of personal website on Github Pages.</li>
-						<li>Creating of website using Graphical User Interface (GUI) platforms such as Google Sites.</li>
-					</ul>
-					<li>Created easy-to-digest notes and provided timely feedbacks on students' works to facilitate learning.</li>
-					<li>Language used: HTML and CSS.</li>
-				</ul>
-
-				<h3><b>Game Design Instructor</b></h3>
-				<h5>AUG 2021 - JAN 2021</h5>
-				<ul class="indent">
-					<li>Handled a class size of around 7 primary school students via Online and Face-to-Face platforms.</li>
-					<li>Taught the students basic design frameworks such as&#58;</li>
-					<ul class="inner-indent">
-						<li>Rendering of game graphics, audio modules, in-game text, etc using Simple and Fast Multimedia (SFML) library.</li>
-						<li>Basic Object-Oriented Programming (OOP) concepts to store in-game information such as game states.</li>
-					</ul>
-					<li>Created easy-to-digest notes and provided timely feedbacks on students' works to facilitate learning.</li>
-					<li>Language used: C++.</li>
-				</ul>
-			</article>
-			<!-- /Article -->
-		</div>
 	</div>	<!-- /container -->
-	
+
 </main>
 
 <footer id="footer">
