@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Tan Wei Qiang, Benjamin">
+	
+	<title>CS3237</title>
+	
+	<link rel="shortcut icon" href="../../assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="../../assets/css/styles.css">
+	
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">
+			<span class="title">CS3237</span>
+			<span class="tagline">Detecting Environmental Changes using SensorTag CC2650</span>
+		</h1>
+	</div>
+
+	<nav class="navbar navbar-default navbar-sticky">
+		<div class="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown_target"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			</div>
+			
+			<div id="dropdown_target" class="navbar-collapse collapse">
+			
+				<ul class="nav navbar-nav">
+					<li><a href="../../index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Internship<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../internship/sll.html">Sustainable Living Lab</a></li>
+							<li><a href="../internship/hydroleap.html">Hydroleap Private Limited</a></li>
+							<li><a href="../internship/rll.html">Raffles Learning Lab</a></li>
+							<li><a href="../internship/resync.html">Resync Technologies Private Limited</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">School Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="fyp.html">Final Year Project</a></li>
+							<li><a href="cs4222.html">CS4222</a></li>
+							<li><a href="ee4218.html">EE4218</a></li>
+							<li class="active"><a href="#">CS3237</a></li>
+							<li><a href="ee2033.html">EE2033</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../personal_projects/asl.html">ASL Recognition</a></li>
+							<li><a href="sidebar-left.html">Tetris</a></li>
+							<li><a href="sidebar-right.html">Race Car</a></li>
+							<li><a href="single.html">Website</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>	
+	</nav>
+</header>
+
+<main id="main">
+
+	<div class="container">
+		
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+															
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta"> 
+ 							<span class="posted-on"><time class="entry-date published" date="2022-5-8">May 8, 2022</time></span>			
+ 						</div> 
+					</header> 
+					<div class="entry-content"> 
+						<h3>Overview</h3>
+						<p>We were tasked to make use of the embedded sensors found on the SensorTag CC2650 to detect ambient light changes and movement.</p>
+						<blockquote>
+							The CC2650 SensorTag board has a Motion Senor MPU9250 and a light sensor OPT 3001.
+							Your task is to <b><u>read the light and MPU sensors</u></b> (accelerometer only) at different rates based
+							on the environment, and <b><u>change the LED brightness according to the light sensor and the
+							accelerometer values</u></b>. In particular, you should adjust the brightness of the LED depending
+							on how fast the sensor node is moving and/or the strength of the light shining on the sensor
+							node. As increasing the brightness of the LED contributes towards the light shining on the
+							light sensor, you need to adjust the thresholds of the light sensor values appropriately.
+						</blockquote>
+						<p>In our proposed solution, we are using the sensors mentioned above for this project.</p>
+
+						<h3>Project Components</h3>
+						<img alt="image of CC2650 RTOS" src="../../assets/images/rtos_cc2650.png" style="max-width: 30%; margin: 0 35%;"><br>
+						<p class="text-center" style="font-size: 10px;"><i>(CC2650 RTOS)</i></p>
+
+						<ul class="indent">
+							<li>SensorTag CC2650: sensors</li>
+						</ul>	
+						
+						<h3>Proof of Concept</h3>
+						<p>Attached is a video recording of the actual demonstration.</p>
+						<video style="max-width: 50%; margin: 0 25%;" controls="controls" preload="metadata"
+							onclick="this.paused ? this.play() : this.pause();">
+							<source type="video/mp4" src="../../assets/video/cs3237_demo.mp4">
+						</video>
+
+					</div> 
+				</article><!-- #post-## -->
+
+			</div> 
+		</div> <!-- /row post  -->
+
+	</div>	<!-- /container -->
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p>+65 8145 6842<br>
+						<a href="mailto:benjamin.tan@outlook.sg">benjamin.tan@outlook.sg</a><br>
+						<br>
+						Singapore, SG
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href="https://github.com/btwq97/"><i class="fa fa-github fa-2"></i></a>
+						<a href="https://www.linkedin.com/in/tanweiqiang/"><i class="fa fa-linkedin fa-2"></i></a>
+					</p>
+				</div>
+			</div>
+
+
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+			<div class="widget">
+				<div class="widget-body">
+					<p class="text-center">
+						Copyright &copy; 2022 Benjamin<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+				</div>
+			</div>
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="../../assets/js/template.js"></script>
+</body>
+</html>

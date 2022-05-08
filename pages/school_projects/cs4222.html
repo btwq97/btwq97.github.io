@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Tan Wei Qiang, Benjamin">
+	
+	<title>CS4222</title>
+	
+	<link rel="shortcut icon" href="../../assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="../../assets/css/styles.css">
+	
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">
+			<span class="title">CS4222</span>
+			<span class="tagline">Mini TraceTogether Token Project</span>
+		</h1>
+	</div>
+
+	<nav class="navbar navbar-default navbar-sticky">
+		<div class="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown_target"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			</div>
+			
+			<div id="dropdown_target" class="navbar-collapse collapse">
+			
+				<ul class="nav navbar-nav">
+					<li><a href="../../index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Internship<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../internship/sll.html">Sustainable Living Lab</a></li>
+							<li><a href="../internship/hydroleap.html">Hydroleap Private Limited</a></li>
+							<li><a href="../internship/rll.html">Raffles Learning Lab</a></li>
+							<li><a href="../internship/resync.html">Resync Technologies Private Limited</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">School Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="fyp.html">Final Year Project</a></li>
+							<li class="active"><a href="#">CS4222</a></li>
+							<li><a href="ee4218.html">EE4218</a></li>
+							<li><a href="cs3237.html">CS3237</a></li>
+							<li><a href="ee2033.html">EE2033</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../personal_projects/asl.html">ASL Recognition</a></li>
+							<li><a href="sidebar-left.html">Tetris</a></li>
+							<li><a href="sidebar-right.html">Race Car</a></li>
+							<li><a href="single.html">Website</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>	
+	</nav>
+</header>
+
+<main id="main">
+
+	<div class="container">
+		
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+															
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta"> 
+ 							<span class="posted-on"><time class="entry-date published" date="2022-5-8">May 8, 2022</time></span>			
+ 						</div> 
+					</header> 
+					<div class="entry-content"> 
+						<h3>Overview</h3>
+						<p>
+							We were tasked to re-create the TraceTogether token functionality using SensorTag CC2650. Each node will experience two states, DETECT and ABSENT.
+						</p>
+						<img alt="image of CC2650 RTOS" src="../../assets/images/cs4222_states.png" style="max-width: 70%; margin: 0 15%;">
+						<p class="text-center" style="font-size: 10px;"><i>(State Transition Diagram)</i></p>
+						<p>
+							In our proposed solution, we used a modified version of the Quorum-based algorithm to implement a deterministic neighbour discover of nearby beacons.
+						</p>
+
+						<h3>Project Components</h3>
+						<img alt="image of CC2650 RTOS" src="../../assets/images/rtos_cc2650.png" style="max-width: 30%; margin: 0 35%;"><br>
+						<p class="text-center" style="font-size: 10px;"><i>(CC2650 RTOS)</i></p>
+						<ul class="indent">
+							<li>CC2650: transceiving tokens x 4</li>
+						</ul>	
+						
+						<h3>Proof of Concept</h3>
+						<p style="margin-bottom: 0;">Here, we re-created 6 scenarios to test for the robustness of our application firmware. The scenarios are as follows:</p>
+						<ul class="indent" style="margin: 0;">
+							<li>Test Case #1: Two nodes come into range of each other</li>
+							<li>Test Case #2: Two nodes goes out of range of each other</li>
+							<li>Test Case #3: The two nodes come in range of each other for 15s. Subsequently, the two
+							nodes go out of range of each other for 30s</li>
+							<li>Edge Case #1: Irregular detection of nodes. The two nodes come in range of each other for
+							less than 15s and go out of range for at least 2s. The two nodes come into
+							contact again for the full 15s. This is to simulate an event where the two nodes
+							are in close proximity, but is only for a short period for less than 15s</li>
+							<li>Edge Case #2: Irregular detection of nodes. The two nodes are in DETECT state. The nodes
+							go out of range for 2s and come back into range. This is to test the limits of the
+							device at a maximum range of 3m. As the RSSI received at the maximum
+							range is spurious, there may be packet loss which results in false detection of
+							ABSENT states</li>
+							<li>Edge Case #3: Multiple nodes in the same area to simulate a multi-node network</li>
+						</ul>
+						<p>The results are summarised in the PDF shown below:</p>
+						<iframe src="../../assets/images/cs4222_results.pdf#view=fitH" width="100%" height="480px"></iframe>
+						<p class="text-center" style="font-size: 10px;"><i>(Result Summary)</i></p><br>
+					</div> 
+				</article><!-- #post-## -->
+
+			</div> 
+		</div> <!-- /row post  -->
+
+	</div>	<!-- /container -->
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p>+65 8145 6842<br>
+						<a href="mailto:benjamin.tan@outlook.sg">benjamin.tan@outlook.sg</a><br>
+						<br>
+						Singapore, SG
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href="https://github.com/btwq97/"><i class="fa fa-github fa-2"></i></a>
+						<a href="https://www.linkedin.com/in/tanweiqiang/"><i class="fa fa-linkedin fa-2"></i></a>
+					</p>
+				</div>
+			</div>
+
+
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+			<div class="widget">
+				<div class="widget-body">
+					<p class="text-center">
+						Copyright &copy; 2022 Benjamin<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+				</div>
+			</div>
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="../../assets/js/template.js"></script>
+</body>
+</html>

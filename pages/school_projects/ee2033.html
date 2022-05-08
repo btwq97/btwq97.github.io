@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Tan Wei Qiang, Benjamin">
+	
+	<title>EE2033</title>
+	
+	<link rel="shortcut icon" href="../../assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="../../assets/css/styles.css">
+	
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">
+			<span class="title">EE2023</span>
+			<span class="tagline">Filter Design</span>
+		</h1>
+	</div>
+
+	<nav class="navbar navbar-default navbar-sticky">
+		<div class="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown_target"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			</div>
+			
+			<div id="dropdown_target" class="navbar-collapse collapse">
+			
+				<ul class="nav navbar-nav">
+					<li><a href="../../index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Internship<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../internship/sll.html">Sustainable Living Lab</a></li>
+							<li><a href="../internship/hydroleap.html">Hydroleap Private Limited</a></li>
+							<li><a href="../internship/rll.html">Raffles Learning Lab</a></li>
+							<li><a href="../internship/resync.html">Resync Technologies Private Limited</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">School Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="fyp.html">Final Year Project</a></li>
+							<li><a href="cs4222.html">CS4222</a></li>
+							<li><a href="ee4218.html">EE4218</a></li>
+							<li><a href="cs3237.html">CS3237</a></li>
+							<li class="active"><a href="#">EE2023</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../personal_projects/asl.html">ASL Recognition</a></li>
+							<li><a href="sidebar-left.html">Tetris</a></li>
+							<li><a href="sidebar-right.html">Race Car</a></li>
+							<li><a href="single.html">Website</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>	
+	</nav>
+</header>
+
+<main id="main">
+
+	<div class="container">
+		
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+															
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta"> 
+ 							<span class="posted-on"><time class="entry-date published" date="2022-5-8">May 8, 2022</time></span>			
+ 						</div> 
+					</header> 
+					<div class="entry-content"> 
+						<h3>Overview</h3>
+						<p>We were tasked to design a filter to suppress interference and obtain the message using a wireless medium.</p>
+						<blockquote>
+							You are required to employ Pluto Adalm, RTL-SDR, Analog Discovery 2, LTSPICE,
+							GNURadio with the given specifications (Design A, B or C) for your group, and design
+							a filter to <b><u>suppress the interference at Intermediate Frequency</u></b> (IF, signal from the
+							RTL-SDR).
+						</blockquote>
+						<p>Our constraints are summarised below:</p>
+						<table style="max-width: 10%; margin:0 auto;">
+							<tr>
+								<th class="table-beautify">Parameters</th>
+								<th class="table-beautify">Unit</th>
+								<th class="table-beautify">Amplitude</th>
+							</tr>
+							<tr>
+								<td class="table-beautify">Signal Frequency</td>
+								<td class="table-beautify">Hz</td>
+								<td class="table-beautify">160k</td>
+							</tr>
+							<tr>
+								<td class="table-beautify">Interference Frequency</td>
+								<td class="table-beautify">Hz</td>
+								<td class="table-beautify">320k</td>
+							</tr>
+							<tr>
+								<td class="table-beautify">Signal Amplitude</td>
+								<td class="table-beautify">Nil</td>
+								<td class="table-beautify">0.15</td>
+							</tr>
+							<tr>
+								<td class="table-beautify">Interference Amplitude</td>
+								<td class="table-beautify">Nil</td>
+								<td class="table-beautify">0.3</td>
+							</tr>
+						</table>
+						<p class="text-center" style="font-size: 10px;"><i>(Summary of design constraints)</i></p>
+
+						<h3>Project Components</h3>
+						<img alt="image of RTL SDR and Adalm Pluto" src="../../assets/images/ee2033_rtl_adam.png" style="max-width: 80%; margin: 0 10%;"><br>
+						<p class="text-center" style="font-size: 10px;"><i>(From left to right: RTL SDR, Adalm Pluto)</i></p>
+						<ul class="indent">
+							<li>RTL SDR: Software-defined radio to receive signals</li>
+							<li>Adalm Pluto: to transmit signals</li>
+						</ul>	
+						
+						<h3>Proof of Concept</h3>
+						<p>We simulated the filter design using LTSpice and we chose our best simulation to be converted into actual hardware prototype as shown below.</p>
+						<img alt="image of filter design" src="../../assets/images/ee2033_actual_circuit.png"
+							style="max-width: 80%; margin: 0 10%;"><br>
+						<p class="text-center" style="font-size: 10px;"><i>(Filter design on breadboard)</i></p>
+						<p>During demonstration, we are able to achieve a PSR (actual) of around 0.1 at 100% interference level.</p>
+						<img alt="image of psr during demo" src="../../assets/images/ee2033_psr.png"
+							style="max-width: 70%; margin: 0 15%;"><br>
+						<p class="text-center" style="font-size: 10px;"><i>(PSR)</i></p>
+					</div> 
+				</article><!-- #post-## -->
+
+			</div> 
+		</div> <!-- /row post  -->
+
+	</div>	<!-- /container -->
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p>+65 8145 6842<br>
+						<a href="mailto:benjamin.tan@outlook.sg">benjamin.tan@outlook.sg</a><br>
+						<br>
+						Singapore, SG
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href="https://github.com/btwq97/"><i class="fa fa-github fa-2"></i></a>
+						<a href="https://www.linkedin.com/in/tanweiqiang/"><i class="fa fa-linkedin fa-2"></i></a>
+					</p>
+				</div>
+			</div>
+
+
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+			<div class="widget">
+				<div class="widget-body">
+					<p class="text-center">
+						Copyright &copy; 2022 Benjamin<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+				</div>
+			</div>
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="../../assets/js/template.js"></script>
+</body>
+</html>
